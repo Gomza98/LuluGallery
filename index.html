@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daughter's Picture Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4672b4;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        /* Gallery styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        /* Modal for viewing images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #4682b4;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Luna's Picture Gallery</h1>
+        <p>Memories that will last forever</p>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="images/IMG-20240601-WA0002.jpg" alt="Daughter's Picture 1" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_20240619_151049.jpg" alt="Daughter's Picture 2" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_20240717_142722.jpg" alt="Daughter's Picture 3" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_20240707_094602.jpg" alt="Daughter's Picture 4" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_20240809_170933.jpg" alt="Daughter's Picture 5" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Snapchat-1139576618.jpg" alt="Daughter's Picture 6" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Snapchat-1568383644.jpg" alt="Daughter's Picture 7" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_20241209_060907.jpg" alt="Daughter's Picture 8" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_20240921_092352.jpg" alt="Daughter's Picture 9" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG-20241225-WA0011.jpg" alt="Daughter's Picture 10" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG-20241206-WA0023.jpg" alt="Daughter's Picture 11" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG-20241218-WA0003.jpg" alt="Daughter's Picture 12" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Snapchat-915183796.jpg" alt="Daughter's Picture 13" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG-20241227-WA0009.jpg" alt="Daughter's Picture 14" onclick="openModal(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG-20241226-WA0013.jpg" alt="Daughter's Picture 15" onclick="openModal(this.src)">
+        </div>
+    </section>
+
+    <!-- Modal for viewing images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage">
+    </div>
+
+    <footer>
+        <p>© 2025 Memories with My Daughter</p>
+    </footer>
+
+    <script>
+        // Modal functions
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("imageModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
